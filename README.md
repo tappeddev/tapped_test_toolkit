@@ -1,39 +1,65 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Tapped test toolkit ⚒️🧪
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+This repository contains utilities for testing.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Browserstack integration
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+You are able to upload and run intergration tests by using `run_android_intergration_test.dart` and `run_ios_integration_test.dart`. This tools communicate with the browserstack api and therefore require a browserstack username and access key.
 
-## Features
+Before running the scripts make sure that you setup your android and iOS projects to be able to generate integration test builds.
+Steps can be found here: https://www.browserstack.com/docs/app-automate/flutter/getting-started
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+### Executing Android integration tests
+Run the following commands locally or in your CI scripts:
+```bash
+# We use fvm here, if you don't just remove "fvm".
+fvm flutter build apk
+# Build the test
+pushd android
+./gradlew app:assembleAndroidTest
+./gradlew app:assembleDebug -Ptarget=integration_test/app_test.dart
+popd
+# Upload and run the test
+fvm dart run lib/android_tests.dart --user="$BROWSERSTACK_USERNAME" --accessKey="$BROWSERSTACK_ACCESS_KEY" --apk="../app/build/app/outputs/apk/debug/app-debug.apk" --testSuite="../app/build/app/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 ```
 
-## Additional information
+The file in `lib/android_tests.dart` is just wrapping the `run_android_intergration_test.dart` method. This can be customized based on your workflow.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+
+android_tests.dart:
+```dart
+import 'package:tapped_test_toolkit/tapped_test_toolkit.dart';
+
+void main(List<String> arguments) {
+  runAndroidIntegrationTest(arguments);
+}
+```
+
+### Executing iOS integration tests
+
+Again, here an example script that can be part of your CI:
+```bash
+export IOS_INTEGRATION_OUTPUT="../build/ios_integ"
+export IOS_INTEGRATION_PRODUCT="build/ios_integ/Build/Products"
+    
+fvm flutter build ios integration_test/app_test.dart --release
+pushd ios
+xcodebuild -workspace Runner.xcworkspace -scheme Runner -config Flutter/Release.xcconfig -derivedDataPath $IOS_INTEGRATION_OUTPUT -sdk iphoneos build-for-testing -quiet
+popd
+pushd $IOS_INTEGRATION_PRODUCT
+# Zip the "Release-iphoneos" folder and all file ending with "*.xctestrun" into "ios_tests.zip"
+(echo "./Release-iphoneos" && find . -name '*.xctestrun') | zip -r ios_tests.zip -@
+popd
+fvm dart run lib/ios_tests.dart --user="$BROWSERSTACK_USERNAME" --accessKey="$BROWSERSTACK_ACCESS_KEY" --path="../app/$IOS_INTEGRATION_PRODUCT/ios_tests.zip"
+```
+
+android_ios.dart:
+```dart
+import 'package:tapped_test_toolkit/tapped_test_toolkit.dart';
+
+void main(List<String> arguments) {
+  runIosIntegrationTest(arguments);
+}
+```
+
