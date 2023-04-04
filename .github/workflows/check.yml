@@ -1,0 +1,43 @@
+name: tapped_toolkit
+
+on: [push]
+
+# Cancel previous builds by only allowing one concurrent build per ref.
+concurrency:
+  group: tapped_test_toolkit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    timeout-minutes: 5
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: kuhnroyal/flutter-fvm-config-action@v1
+      with:
+        path: '.fvm/fvm_config.json'
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        channel: ${{ env.FLUTTER_CHANNEL }}
+    - name: Get all dependencies
+      run: flutter pub get
+    - name: analyze app
+      run: flutter analyze
+
+  format:
+    timeout-minutes: 5
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: kuhnroyal/flutter-fvm-config-action@v1
+      with:
+        path: '.fvm/fvm_config.json'
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        channel: ${{ env.FLUTTER_CHANNEL }}
+    - name: Get all dependencies
+      run: flutter pub get
+    - name: Check formatting
+      run: find . -name "*.dart" ! -name "*.g.dart" ! -name "*.freezed.dart" ! -path '*/generated/*' ! -path '*/gen/*' | xargs flutter format -n --set-exit-if-changed
