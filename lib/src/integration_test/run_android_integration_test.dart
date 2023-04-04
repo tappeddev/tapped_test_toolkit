@@ -3,7 +3,7 @@ import 'package:tapped_test_toolkit/src/integration_test/browser_stack_api.dart'
 import 'package:tapped_test_toolkit/src/integration_test/browser_stack_test_status.dart';
 import 'package:tapped_test_toolkit/src/integration_test/option/integration_test_android_option.dart';
 
-void main(List<String> arguments) async {
+Future<void> runAndroidIntegrationTest(List<String> arguments) async {
   const api = BrowserStackApi();
   final option = await IntegrationTestAndroidOption.fromArguments(arguments);
 
