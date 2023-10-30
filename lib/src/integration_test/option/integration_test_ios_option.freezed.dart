@@ -19,6 +19,7 @@ mixin _$IntegrationTestIosOption {
   String get browserstackUsername => throw _privateConstructorUsedError;
   String get browserstackAccessKey => throw _privateConstructorUsedError;
   File get testPackage => throw _privateConstructorUsedError;
+  bool get networkLogs => throw _privateConstructorUsedError;
   bool get deviceLogs => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -36,6 +37,7 @@ abstract class $IntegrationTestIosOptionCopyWith<$Res> {
       {String browserstackUsername,
       String browserstackAccessKey,
       File testPackage,
+      bool networkLogs,
       bool deviceLogs});
 }
 
@@ -56,6 +58,7 @@ class _$IntegrationTestIosOptionCopyWithImpl<$Res,
     Object? browserstackUsername = null,
     Object? browserstackAccessKey = null,
     Object? testPackage = null,
+    Object? networkLogs = null,
     Object? deviceLogs = null,
   }) {
     return _then(_value.copyWith(
@@ -71,6 +74,10 @@ class _$IntegrationTestIosOptionCopyWithImpl<$Res,
           ? _value.testPackage
           : testPackage // ignore: cast_nullable_to_non_nullable
               as File,
+      networkLogs: null == networkLogs
+          ? _value.networkLogs
+          : networkLogs // ignore: cast_nullable_to_non_nullable
+              as bool,
       deviceLogs: null == deviceLogs
           ? _value.deviceLogs
           : deviceLogs // ignore: cast_nullable_to_non_nullable
@@ -92,6 +99,7 @@ abstract class _$$IntegrationTestIosOptionImplCopyWith<$Res>
       {String browserstackUsername,
       String browserstackAccessKey,
       File testPackage,
+      bool networkLogs,
       bool deviceLogs});
 }
 
@@ -111,6 +119,7 @@ class __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>
     Object? browserstackUsername = null,
     Object? browserstackAccessKey = null,
     Object? testPackage = null,
+    Object? networkLogs = null,
     Object? deviceLogs = null,
   }) {
     return _then(_$IntegrationTestIosOptionImpl(
@@ -126,6 +135,10 @@ class __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>
           ? _value.testPackage
           : testPackage // ignore: cast_nullable_to_non_nullable
               as File,
+      networkLogs: null == networkLogs
+          ? _value.networkLogs
+          : networkLogs // ignore: cast_nullable_to_non_nullable
+              as bool,
       deviceLogs: null == deviceLogs
           ? _value.deviceLogs
           : deviceLogs // ignore: cast_nullable_to_non_nullable
@@ -141,6 +154,7 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
       {required this.browserstackUsername,
       required this.browserstackAccessKey,
       required this.testPackage,
+      this.networkLogs = true,
       this.deviceLogs = true})
       : super._();
 
@@ -152,11 +166,14 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
   final File testPackage;
   @override
   @JsonKey()
+  final bool networkLogs;
+  @override
+  @JsonKey()
   final bool deviceLogs;
 
   @override
   String toString() {
-    return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, deviceLogs: $deviceLogs)';
+    return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
   }
 
   @override
@@ -170,13 +187,15 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
                 other.browserstackAccessKey == browserstackAccessKey) &&
             (identical(other.testPackage, testPackage) ||
                 other.testPackage == testPackage) &&
+            (identical(other.networkLogs, networkLogs) ||
+                other.networkLogs == networkLogs) &&
             (identical(other.deviceLogs, deviceLogs) ||
                 other.deviceLogs == deviceLogs));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, browserstackUsername,
-      browserstackAccessKey, testPackage, deviceLogs);
+      browserstackAccessKey, testPackage, networkLogs, deviceLogs);
 
   @JsonKey(ignore: true)
   @override
@@ -191,6 +210,7 @@ abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
       {required final String browserstackUsername,
       required final String browserstackAccessKey,
       required final File testPackage,
+      final bool networkLogs,
       final bool deviceLogs}) = _$IntegrationTestIosOptionImpl;
   const _IntegrationTestIosOption._() : super._();
 
@@ -200,6 +220,8 @@ abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
   String get browserstackAccessKey;
   @override
   File get testPackage;
+  @override
+  bool get networkLogs;
   @override
   bool get deviceLogs;
   @override

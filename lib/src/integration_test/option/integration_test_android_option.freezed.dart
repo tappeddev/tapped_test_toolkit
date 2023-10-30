@@ -21,6 +21,7 @@ mixin _$IntegrationTestAndroidOption {
   File get apk => throw _privateConstructorUsedError;
   File get testSuite => throw _privateConstructorUsedError;
   List<String> get devices => throw _privateConstructorUsedError;
+  bool get networkLogs => throw _privateConstructorUsedError;
   bool get deviceLogs => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -42,6 +43,7 @@ abstract class $IntegrationTestAndroidOptionCopyWith<$Res> {
       File apk,
       File testSuite,
       List<String> devices,
+      bool networkLogs,
       bool deviceLogs});
 }
 
@@ -64,6 +66,7 @@ class _$IntegrationTestAndroidOptionCopyWithImpl<$Res,
     Object? apk = null,
     Object? testSuite = null,
     Object? devices = null,
+    Object? networkLogs = null,
     Object? deviceLogs = null,
   }) {
     return _then(_value.copyWith(
@@ -87,6 +90,10 @@ class _$IntegrationTestAndroidOptionCopyWithImpl<$Res,
           ? _value.devices
           : devices // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      networkLogs: null == networkLogs
+          ? _value.networkLogs
+          : networkLogs // ignore: cast_nullable_to_non_nullable
+              as bool,
       deviceLogs: null == deviceLogs
           ? _value.deviceLogs
           : deviceLogs // ignore: cast_nullable_to_non_nullable
@@ -110,6 +117,7 @@ abstract class _$$IntegrationTestAndroidOptionImplCopyWith<$Res>
       File apk,
       File testSuite,
       List<String> devices,
+      bool networkLogs,
       bool deviceLogs});
 }
 
@@ -131,6 +139,7 @@ class __$$IntegrationTestAndroidOptionImplCopyWithImpl<$Res>
     Object? apk = null,
     Object? testSuite = null,
     Object? devices = null,
+    Object? networkLogs = null,
     Object? deviceLogs = null,
   }) {
     return _then(_$IntegrationTestAndroidOptionImpl(
@@ -154,6 +163,10 @@ class __$$IntegrationTestAndroidOptionImplCopyWithImpl<$Res>
           ? _value._devices
           : devices // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      networkLogs: null == networkLogs
+          ? _value.networkLogs
+          : networkLogs // ignore: cast_nullable_to_non_nullable
+              as bool,
       deviceLogs: null == deviceLogs
           ? _value.deviceLogs
           : deviceLogs // ignore: cast_nullable_to_non_nullable
@@ -171,6 +184,7 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
       required this.apk,
       required this.testSuite,
       final List<String> devices = const ["Samsung Galaxy S9 Plus-9.0"],
+      this.networkLogs = true,
       this.deviceLogs = true})
       : _devices = devices,
         super._();
@@ -194,11 +208,14 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
 
   @override
   @JsonKey()
+  final bool networkLogs;
+  @override
+  @JsonKey()
   final bool deviceLogs;
 
   @override
   String toString() {
-    return 'IntegrationTestAndroidOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, apk: $apk, testSuite: $testSuite, devices: $devices, deviceLogs: $deviceLogs)';
+    return 'IntegrationTestAndroidOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, apk: $apk, testSuite: $testSuite, devices: $devices, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
   }
 
   @override
@@ -214,6 +231,8 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
             (identical(other.testSuite, testSuite) ||
                 other.testSuite == testSuite) &&
             const DeepCollectionEquality().equals(other._devices, _devices) &&
+            (identical(other.networkLogs, networkLogs) ||
+                other.networkLogs == networkLogs) &&
             (identical(other.deviceLogs, deviceLogs) ||
                 other.deviceLogs == deviceLogs));
   }
@@ -226,6 +245,7 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
       apk,
       testSuite,
       const DeepCollectionEquality().hash(_devices),
+      networkLogs,
       deviceLogs);
 
   @JsonKey(ignore: true)
@@ -245,6 +265,7 @@ abstract class _IntegrationTestAndroidOption
       required final File apk,
       required final File testSuite,
       final List<String> devices,
+      final bool networkLogs,
       final bool deviceLogs}) = _$IntegrationTestAndroidOptionImpl;
   const _IntegrationTestAndroidOption._() : super._();
 
@@ -258,6 +279,8 @@ abstract class _IntegrationTestAndroidOption
   File get testSuite;
   @override
   List<String> get devices;
+  @override
+  bool get networkLogs;
   @override
   bool get deviceLogs;
   @override

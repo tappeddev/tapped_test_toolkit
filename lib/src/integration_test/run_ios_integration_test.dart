@@ -22,8 +22,8 @@ Future<void> runIosIntegrationTest(List<String> arguments) async {
     basicAuthHeader: option.basicAuthValue,
     body: {
       "testPackage": testPackageUrl,
-      "networkLogs": "true",
-      "deviceLogs": "true",
+      "networkLogs": option.networkLogs,
+      "deviceLogs": option.deviceLogs,
       "devices": option.devices,
     },
   );

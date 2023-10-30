@@ -18,6 +18,7 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     required File apk,
     required File testSuite,
     @Default(["Samsung Galaxy S9 Plus-9.0"]) List<String> devices,
+    @Default(true) bool networkLogs,
     @Default(true) bool deviceLogs,
   }) = _IntegrationTestAndroidOption;
 

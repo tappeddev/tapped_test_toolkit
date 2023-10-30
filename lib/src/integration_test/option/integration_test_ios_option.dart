@@ -15,6 +15,7 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
     required String browserstackUsername,
     required String browserstackAccessKey,
     required File testPackage,
+    @Default(true) bool networkLogs,
     @Default(true) bool deviceLogs,
   }) = _IntegrationTestIosOption;
 
