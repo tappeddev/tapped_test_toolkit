@@ -19,6 +19,7 @@ mixin _$IntegrationTestIosOption {
   String get browserstackUsername => throw _privateConstructorUsedError;
   String get browserstackAccessKey => throw _privateConstructorUsedError;
   File get testPackage => throw _privateConstructorUsedError;
+  bool get deviceLogs => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $IntegrationTestIosOptionCopyWith<IntegrationTestIosOption> get copyWith =>
@@ -34,7 +35,8 @@ abstract class $IntegrationTestIosOptionCopyWith<$Res> {
   $Res call(
       {String browserstackUsername,
       String browserstackAccessKey,
-      File testPackage});
+      File testPackage,
+      bool deviceLogs});
 }
 
 /// @nodoc
@@ -54,6 +56,7 @@ class _$IntegrationTestIosOptionCopyWithImpl<$Res,
     Object? browserstackUsername = null,
     Object? browserstackAccessKey = null,
     Object? testPackage = null,
+    Object? deviceLogs = null,
   }) {
     return _then(_value.copyWith(
       browserstackUsername: null == browserstackUsername
@@ -68,32 +71,38 @@ class _$IntegrationTestIosOptionCopyWithImpl<$Res,
           ? _value.testPackage
           : testPackage // ignore: cast_nullable_to_non_nullable
               as File,
+      deviceLogs: null == deviceLogs
+          ? _value.deviceLogs
+          : deviceLogs // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_IntegrationTestIosOptionCopyWith<$Res>
+abstract class _$$IntegrationTestIosOptionImplCopyWith<$Res>
     implements $IntegrationTestIosOptionCopyWith<$Res> {
-  factory _$$_IntegrationTestIosOptionCopyWith(
-          _$_IntegrationTestIosOption value,
-          $Res Function(_$_IntegrationTestIosOption) then) =
-      __$$_IntegrationTestIosOptionCopyWithImpl<$Res>;
+  factory _$$IntegrationTestIosOptionImplCopyWith(
+          _$IntegrationTestIosOptionImpl value,
+          $Res Function(_$IntegrationTestIosOptionImpl) then) =
+      __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String browserstackUsername,
       String browserstackAccessKey,
-      File testPackage});
+      File testPackage,
+      bool deviceLogs});
 }
 
 /// @nodoc
-class __$$_IntegrationTestIosOptionCopyWithImpl<$Res>
+class __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>
     extends _$IntegrationTestIosOptionCopyWithImpl<$Res,
-        _$_IntegrationTestIosOption>
-    implements _$$_IntegrationTestIosOptionCopyWith<$Res> {
-  __$$_IntegrationTestIosOptionCopyWithImpl(_$_IntegrationTestIosOption _value,
-      $Res Function(_$_IntegrationTestIosOption) _then)
+        _$IntegrationTestIosOptionImpl>
+    implements _$$IntegrationTestIosOptionImplCopyWith<$Res> {
+  __$$IntegrationTestIosOptionImplCopyWithImpl(
+      _$IntegrationTestIosOptionImpl _value,
+      $Res Function(_$IntegrationTestIosOptionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,8 +111,9 @@ class __$$_IntegrationTestIosOptionCopyWithImpl<$Res>
     Object? browserstackUsername = null,
     Object? browserstackAccessKey = null,
     Object? testPackage = null,
+    Object? deviceLogs = null,
   }) {
-    return _then(_$_IntegrationTestIosOption(
+    return _then(_$IntegrationTestIosOptionImpl(
       browserstackUsername: null == browserstackUsername
           ? _value.browserstackUsername
           : browserstackUsername // ignore: cast_nullable_to_non_nullable
@@ -116,17 +126,22 @@ class __$$_IntegrationTestIosOptionCopyWithImpl<$Res>
           ? _value.testPackage
           : testPackage // ignore: cast_nullable_to_non_nullable
               as File,
+      deviceLogs: null == deviceLogs
+          ? _value.deviceLogs
+          : deviceLogs // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_IntegrationTestIosOption extends _IntegrationTestIosOption {
-  const _$_IntegrationTestIosOption(
+class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
+  const _$IntegrationTestIosOptionImpl(
       {required this.browserstackUsername,
       required this.browserstackAccessKey,
-      required this.testPackage})
+      required this.testPackage,
+      this.deviceLogs = true})
       : super._();
 
   @override
@@ -135,42 +150,48 @@ class _$_IntegrationTestIosOption extends _IntegrationTestIosOption {
   final String browserstackAccessKey;
   @override
   final File testPackage;
+  @override
+  @JsonKey()
+  final bool deviceLogs;
 
   @override
   String toString() {
-    return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage)';
+    return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, deviceLogs: $deviceLogs)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IntegrationTestIosOption &&
+            other is _$IntegrationTestIosOptionImpl &&
             (identical(other.browserstackUsername, browserstackUsername) ||
                 other.browserstackUsername == browserstackUsername) &&
             (identical(other.browserstackAccessKey, browserstackAccessKey) ||
                 other.browserstackAccessKey == browserstackAccessKey) &&
             (identical(other.testPackage, testPackage) ||
-                other.testPackage == testPackage));
+                other.testPackage == testPackage) &&
+            (identical(other.deviceLogs, deviceLogs) ||
+                other.deviceLogs == deviceLogs));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, browserstackUsername, browserstackAccessKey, testPackage);
+  int get hashCode => Object.hash(runtimeType, browserstackUsername,
+      browserstackAccessKey, testPackage, deviceLogs);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IntegrationTestIosOptionCopyWith<_$_IntegrationTestIosOption>
-      get copyWith => __$$_IntegrationTestIosOptionCopyWithImpl<
-          _$_IntegrationTestIosOption>(this, _$identity);
+  _$$IntegrationTestIosOptionImplCopyWith<_$IntegrationTestIosOptionImpl>
+      get copyWith => __$$IntegrationTestIosOptionImplCopyWithImpl<
+          _$IntegrationTestIosOptionImpl>(this, _$identity);
 }
 
 abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
   const factory _IntegrationTestIosOption(
       {required final String browserstackUsername,
       required final String browserstackAccessKey,
-      required final File testPackage}) = _$_IntegrationTestIosOption;
+      required final File testPackage,
+      final bool deviceLogs}) = _$IntegrationTestIosOptionImpl;
   const _IntegrationTestIosOption._() : super._();
 
   @override
@@ -180,7 +201,9 @@ abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
   @override
   File get testPackage;
   @override
+  bool get deviceLogs;
+  @override
   @JsonKey(ignore: true)
-  _$$_IntegrationTestIosOptionCopyWith<_$_IntegrationTestIosOption>
+  _$$IntegrationTestIosOptionImplCopyWith<_$IntegrationTestIosOptionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
