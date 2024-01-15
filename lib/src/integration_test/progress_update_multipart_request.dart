@@ -4,10 +4,10 @@ import 'package:http/http.dart' as http;
 
 class ProgressUpdateMultipartRequest extends http.MultipartRequest {
   ProgressUpdateMultipartRequest(
-    String method,
-    Uri url, {
+    super.method,
+    super.url, {
     required this.onProgress,
-  }) : super(method, url);
+  });
 
   final void Function(int bytes, int totalBytes) onProgress;
 

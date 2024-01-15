@@ -23,7 +23,8 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
   }) = _IntegrationTestAndroidOption;
 
   static Future<IntegrationTestAndroidOption> fromArguments(
-      List<String> arguments) async {
+    List<String> arguments,
+  ) async {
     final parser = ArgParser()
       ..addOption(IntegrationTestParameter.apkPathParam)
       ..addOption(IntegrationTestParameter.testSuitePathParam)

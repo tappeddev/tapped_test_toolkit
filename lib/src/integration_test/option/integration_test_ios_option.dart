@@ -20,7 +20,8 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
   }) = _IntegrationTestIosOption;
 
   static Future<IntegrationTestIosOption> fromArguments(
-      List<String> arguments) async {
+    List<String> arguments,
+  ) async {
     final parser = ArgParser()
       ..addOption(IntegrationTestParameter.browserstackUserParam)
       ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
