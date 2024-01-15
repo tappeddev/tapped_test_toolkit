@@ -4,7 +4,7 @@ This repository contains utilities for testing.
 
 ## Browserstack integration
 
-You are able to upload and run intergration tests by using `run_android_intergration_test.dart` and `run_ios_integration_test.dart`. This tools communicate with the browserstack api and therefore require a browserstack username and access key.
+You are able to upload and run integration tests by using `run_android_intergration_test.dart` and `run_ios_integration_test.dart`. This tools communicate with the browserstack api and therefore require a browserstack username and access key.
 
 Before running the scripts make sure that you setup your android and iOS projects to be able to generate integration test builds.
 Steps can be found here: https://www.browserstack.com/docs/app-automate/flutter/getting-started
@@ -54,7 +54,7 @@ popd
 fvm dart run lib/ios_tests.dart --user="$BROWSERSTACK_USERNAME" --accessKey="$BROWSERSTACK_ACCESS_KEY" --path="../app/$IOS_INTEGRATION_PRODUCT/ios_tests.zip"
 ```
 
-android_ios.dart:
+ios_tests.dart:
 ```dart
 import 'package:tapped_test_toolkit/tapped_test_toolkit.dart';
 
