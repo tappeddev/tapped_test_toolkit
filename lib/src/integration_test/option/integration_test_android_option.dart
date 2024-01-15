@@ -17,10 +17,14 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     required String browserstackAccessKey,
     required File apk,
     required File testSuite,
+    @Default(["Samsung Galaxy S9 Plus-9.0"]) List<String> devices,
+    @Default(true) bool networkLogs,
+    @Default(true) bool deviceLogs,
   }) = _IntegrationTestAndroidOption;
 
   static Future<IntegrationTestAndroidOption> fromArguments(
-      List<String> arguments) async {
+    List<String> arguments,
+  ) async {
     final parser = ArgParser()
       ..addOption(IntegrationTestParameter.apkPathParam)
       ..addOption(IntegrationTestParameter.testSuitePathParam)
@@ -48,6 +52,4 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
   String get basicAuthValue {
     return "Basic ${base64Encode(utf8.encode("$browserstackUsername:$browserstackAccessKey"))}";
   }
-
-  List<String> get devices => ["Samsung Galaxy S9 Plus-9.0"];
 }

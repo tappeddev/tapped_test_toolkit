@@ -33,6 +33,8 @@ Future<void> runAndroidIntegrationTest(List<String> arguments) async {
       "app": appUrl,
       "testSuite": testSuiteUrl,
       "devices": option.devices,
+      "networkLogs": option.networkLogs,
+      "deviceLogs": option.deviceLogs,
     },
   );
 

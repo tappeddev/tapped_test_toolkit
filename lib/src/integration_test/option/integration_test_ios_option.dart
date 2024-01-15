@@ -15,10 +15,13 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
     required String browserstackUsername,
     required String browserstackAccessKey,
     required File testPackage,
+    @Default(true) bool networkLogs,
+    @Default(true) bool deviceLogs,
   }) = _IntegrationTestIosOption;
 
   static Future<IntegrationTestIosOption> fromArguments(
-      List<String> arguments) async {
+    List<String> arguments,
+  ) async {
     final parser = ArgParser()
       ..addOption(IntegrationTestParameter.browserstackUserParam)
       ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
