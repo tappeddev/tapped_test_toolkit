@@ -17,6 +17,7 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     required String browserstackAccessKey,
     required File apk,
     required File testSuite,
+    String? customId,
     @Default(["Samsung Galaxy S9 Plus-9.0"]) List<String> devices,
     @Default(true) bool networkLogs,
     @Default(true) bool deviceLogs,

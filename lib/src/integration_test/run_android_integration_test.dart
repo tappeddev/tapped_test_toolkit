@@ -35,6 +35,7 @@ Future<void> runAndroidIntegrationTest(List<String> arguments) async {
       "devices": option.devices,
       "networkLogs": option.networkLogs,
       "deviceLogs": option.deviceLogs,
+      if (option.customId != null) "custom_id": option.customId!,
     },
   );
 

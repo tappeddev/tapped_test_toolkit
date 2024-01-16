@@ -19,6 +19,7 @@ mixin _$IntegrationTestIosOption {
   String get browserstackUsername => throw _privateConstructorUsedError;
   String get browserstackAccessKey => throw _privateConstructorUsedError;
   File get testPackage => throw _privateConstructorUsedError;
+  String? get customId => throw _privateConstructorUsedError;
   bool get networkLogs => throw _privateConstructorUsedError;
   bool get deviceLogs => throw _privateConstructorUsedError;
 
@@ -37,6 +38,7 @@ abstract class $IntegrationTestIosOptionCopyWith<$Res> {
       {String browserstackUsername,
       String browserstackAccessKey,
       File testPackage,
+      String? customId,
       bool networkLogs,
       bool deviceLogs});
 }
@@ -58,6 +60,7 @@ class _$IntegrationTestIosOptionCopyWithImpl<$Res,
     Object? browserstackUsername = null,
     Object? browserstackAccessKey = null,
     Object? testPackage = null,
+    Object? customId = freezed,
     Object? networkLogs = null,
     Object? deviceLogs = null,
   }) {
@@ -74,6 +77,10 @@ class _$IntegrationTestIosOptionCopyWithImpl<$Res,
           ? _value.testPackage
           : testPackage // ignore: cast_nullable_to_non_nullable
               as File,
+      customId: freezed == customId
+          ? _value.customId
+          : customId // ignore: cast_nullable_to_non_nullable
+              as String?,
       networkLogs: null == networkLogs
           ? _value.networkLogs
           : networkLogs // ignore: cast_nullable_to_non_nullable
@@ -99,6 +106,7 @@ abstract class _$$IntegrationTestIosOptionImplCopyWith<$Res>
       {String browserstackUsername,
       String browserstackAccessKey,
       File testPackage,
+      String? customId,
       bool networkLogs,
       bool deviceLogs});
 }
@@ -119,6 +127,7 @@ class __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>
     Object? browserstackUsername = null,
     Object? browserstackAccessKey = null,
     Object? testPackage = null,
+    Object? customId = freezed,
     Object? networkLogs = null,
     Object? deviceLogs = null,
   }) {
@@ -135,6 +144,10 @@ class __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>
           ? _value.testPackage
           : testPackage // ignore: cast_nullable_to_non_nullable
               as File,
+      customId: freezed == customId
+          ? _value.customId
+          : customId // ignore: cast_nullable_to_non_nullable
+              as String?,
       networkLogs: null == networkLogs
           ? _value.networkLogs
           : networkLogs // ignore: cast_nullable_to_non_nullable
@@ -154,6 +167,7 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
       {required this.browserstackUsername,
       required this.browserstackAccessKey,
       required this.testPackage,
+      this.customId,
       this.networkLogs = true,
       this.deviceLogs = true})
       : super._();
@@ -165,6 +179,8 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
   @override
   final File testPackage;
   @override
+  final String? customId;
+  @override
   @JsonKey()
   final bool networkLogs;
   @override
@@ -173,7 +189,7 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
 
   @override
   String toString() {
-    return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
+    return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, customId: $customId, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
   }
 
   @override
@@ -187,6 +203,8 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
                 other.browserstackAccessKey == browserstackAccessKey) &&
             (identical(other.testPackage, testPackage) ||
                 other.testPackage == testPackage) &&
+            (identical(other.customId, customId) ||
+                other.customId == customId) &&
             (identical(other.networkLogs, networkLogs) ||
                 other.networkLogs == networkLogs) &&
             (identical(other.deviceLogs, deviceLogs) ||
@@ -195,7 +213,7 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
 
   @override
   int get hashCode => Object.hash(runtimeType, browserstackUsername,
-      browserstackAccessKey, testPackage, networkLogs, deviceLogs);
+      browserstackAccessKey, testPackage, customId, networkLogs, deviceLogs);
 
   @JsonKey(ignore: true)
   @override
@@ -210,6 +228,7 @@ abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
       {required final String browserstackUsername,
       required final String browserstackAccessKey,
       required final File testPackage,
+      final String? customId,
       final bool networkLogs,
       final bool deviceLogs}) = _$IntegrationTestIosOptionImpl;
   const _IntegrationTestIosOption._() : super._();
@@ -220,6 +239,8 @@ abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
   String get browserstackAccessKey;
   @override
   File get testPackage;
+  @override
+  String? get customId;
   @override
   bool get networkLogs;
   @override

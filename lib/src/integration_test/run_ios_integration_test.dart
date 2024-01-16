@@ -25,6 +25,7 @@ Future<void> runIosIntegrationTest(List<String> arguments) async {
       "networkLogs": option.networkLogs,
       "deviceLogs": option.deviceLogs,
       "devices": option.devices,
+      if (option.customId != null) "custom_id": option.customId!,
     },
   );
 
