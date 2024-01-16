@@ -24,9 +24,19 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
     List<String> arguments,
   ) async {
     final parser = ArgParser()
-      ..addOption(IntegrationTestParameter.browserstackUserParam)
-      ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
-      ..addOption(IntegrationTestParameter.testPackagePathParam);
+      ..addOption(
+        IntegrationTestParameter.browserstackUserParam,
+        mandatory: true,
+      )
+      ..addOption(
+        IntegrationTestParameter.browserstackAccessKeyParam,
+        mandatory: true,
+      )
+      ..addOption(
+        IntegrationTestParameter.testPackagePathParam,
+        mandatory: true,
+      )
+      ..addOption(IntegrationTestParameter.customIdParam);
 
     final argResults = parser.parse(arguments);
 
@@ -40,6 +50,7 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
           argResults[IntegrationTestParameter.browserstackAccessKeyParam]
               as String,
       testPackage: await fileFromRelativePath(testPackagePath),
+      customId: argResults[IntegrationTestParameter.customIdParam],
     );
   }
 

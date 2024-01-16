@@ -1,6 +1,7 @@
 class IntegrationTestParameter {
   static const String browserstackAccessKeyParam = "accessKey";
   static const String browserstackUserParam = "user";
+  static const String customIdParam = "customId";
 
   // region android
 

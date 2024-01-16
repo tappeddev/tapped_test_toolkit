@@ -27,10 +27,17 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     List<String> arguments,
   ) async {
     final parser = ArgParser()
-      ..addOption(IntegrationTestParameter.apkPathParam)
-      ..addOption(IntegrationTestParameter.testSuitePathParam)
-      ..addOption(IntegrationTestParameter.browserstackUserParam)
-      ..addOption(IntegrationTestParameter.browserstackAccessKeyParam);
+      ..addOption(IntegrationTestParameter.apkPathParam, mandatory: true)
+      ..addOption(IntegrationTestParameter.testSuitePathParam, mandatory: true)
+      ..addOption(
+        IntegrationTestParameter.browserstackUserParam,
+        mandatory: true,
+      )
+      ..addOption(
+        IntegrationTestParameter.browserstackAccessKeyParam,
+        mandatory: true,
+      )
+      ..addOption(IntegrationTestParameter.customIdParam);
 
     final argResults = parser.parse(arguments);
 
@@ -47,6 +54,7 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
       browserstackAccessKey:
           argResults[IntegrationTestParameter.browserstackAccessKeyParam]
               as String,
+      customId: argResults[IntegrationTestParameter.customIdParam],
     );
   }
 
