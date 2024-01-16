@@ -40,4 +40,4 @@ jobs:
     - name: Get all dependencies
       run: flutter pub get
     - name: Check formatting
-      run: find . -name "*.dart" ! -name "*.g.dart" ! -name "*.freezed.dart" ! -path '*/generated/*' ! -path '*/gen/*' | xargs dart format -n --set-exit-if-changed
+      run: dart format -o none --set-exit-if-changed $(find . -name '*.dart' ! -name '*.g.dart' ! -name '*.freezed.dart' ! -path '*/generated/*' ! -path '*/gen/*')
