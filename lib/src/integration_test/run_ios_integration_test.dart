@@ -16,6 +16,9 @@ Future<void> runIosIntegrationTest(List<String> arguments) async {
         "https://api-cloud.browserstack.com/app-automate/flutter-integration-tests/v2/ios/test-package",
     file: option.testPackage,
     basicAuthHeader: option.basicAuthValue,
+    fields: {
+      if (option.customId != null) "custom_id": option.customId!,
+    },
   );
 
   final testPackageUrl = uploadPackageResult.getRequiredKey("test_package_url");
@@ -29,7 +32,6 @@ Future<void> runIosIntegrationTest(List<String> arguments) async {
       "networkLogs": option.networkLogs,
       "deviceLogs": option.deviceLogs,
       "devices": option.devices,
-      if (option.customId != null) "custom_id": option.customId!,
     },
   );
 

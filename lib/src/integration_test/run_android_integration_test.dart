@@ -21,6 +21,9 @@ Future<void> runAndroidIntegrationTest(List<String> arguments) async {
     file: option.testSuite,
     url:
         "https://api-cloud.browserstack.com/app-automate/flutter-integration-tests/v2/android/test-suite",
+    fields: {
+      if (option.customId != null) "custom_id": option.customId!,
+    },
   );
 
   final testSuiteUrl = uploadTestSuiteResponse.getRequiredKey("test_suite_url");
@@ -35,7 +38,6 @@ Future<void> runAndroidIntegrationTest(List<String> arguments) async {
       "devices": option.devices,
       "networkLogs": option.networkLogs,
       "deviceLogs": option.deviceLogs,
-      if (option.customId != null) "custom_id": option.customId!,
     },
   );
 
