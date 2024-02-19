@@ -15,6 +15,8 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
     required String browserstackUsername,
     required String browserstackAccessKey,
     required File testPackage,
+    String? customId,
+    required List<String> devices,
     @Default(true) bool networkLogs,
     @Default(true) bool deviceLogs,
   }) = _IntegrationTestIosOption;
@@ -25,26 +27,37 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
     final parser = ArgParser()
       ..addOption(IntegrationTestParameter.browserstackUserParam)
       ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
-      ..addOption(IntegrationTestParameter.testPackagePathParam);
+      ..addOption(IntegrationTestParameter.testPackagePathParam)
+      ..addOption(
+        IntegrationTestParameter.devicesParam,
+        defaultsTo: "iPhone 14 Plus-16",
+      )
+      ..addOption(IntegrationTestParameter.customIdParam);
 
     final argResults = parser.parse(arguments);
 
     final testPackagePath =
         argResults[IntegrationTestParameter.testPackagePathParam] as String;
 
+    final devices =
+        (argResults[IntegrationTestParameter.devicesParam] as String)
+            .split(",")
+            .map((device) => device.trim())
+            .toList();
+
     return IntegrationTestIosOption(
       browserstackUsername:
           argResults[IntegrationTestParameter.browserstackUserParam] as String,
+      devices: devices,
       browserstackAccessKey:
           argResults[IntegrationTestParameter.browserstackAccessKeyParam]
               as String,
       testPackage: await fileFromRelativePath(testPackagePath),
+      customId: argResults[IntegrationTestParameter.customIdParam],
     );
   }
 
   String get basicAuthValue {
     return "Basic ${base64Encode(utf8.encode("$browserstackUsername:$browserstackAccessKey"))}";
   }
-
-  List<String> get devices => ["iPhone 14 Plus-16"];
 }

@@ -24,6 +24,8 @@ popd
 fvm dart run lib/android_tests.dart --user="$BROWSERSTACK_USERNAME" --accessKey="$BROWSERSTACK_ACCESS_KEY" --apk="../app/build/app/outputs/apk/debug/app-debug.apk" --testSuite="../app/build/app/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 ```
 
+⚠️ The devices  need to be comma separated, like: `--devices="Samsung Galaxy S22-12.0, Samsung Galaxy A52-11.0"`.
+
 The file in `lib/android_tests.dart` is just wrapping the `run_android_intergration_test.dart` method. This can be customized based on your workflow.
 
 
