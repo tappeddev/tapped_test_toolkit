@@ -34,7 +34,8 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
       ..addOption(
         IntegrationTestParameter.devicesParam,
         defaultsTo: "Samsung Galaxy S22-12.0",
-      );
+      )
+      ..addOption(IntegrationTestParameter.customIdParam);
 
     final argResults = parser.parse(arguments);
 
