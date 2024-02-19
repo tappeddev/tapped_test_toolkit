@@ -16,6 +16,7 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
     required String browserstackAccessKey,
     required File testPackage,
     String? customId,
+    required List<String> devices,
     @Default(true) bool networkLogs,
     @Default(true) bool deviceLogs,
   }) = _IntegrationTestIosOption;
@@ -24,17 +25,12 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
     List<String> arguments,
   ) async {
     final parser = ArgParser()
+      ..addOption(IntegrationTestParameter.browserstackUserParam)
+      ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
+      ..addOption(IntegrationTestParameter.testPackagePathParam)
       ..addOption(
-        IntegrationTestParameter.browserstackUserParam,
-        mandatory: true,
-      )
-      ..addOption(
-        IntegrationTestParameter.browserstackAccessKeyParam,
-        mandatory: true,
-      )
-      ..addOption(
-        IntegrationTestParameter.testPackagePathParam,
-        mandatory: true,
+        IntegrationTestParameter.devicesParam,
+        defaultsTo: "iPhone 14 Plus-16",
       )
       ..addOption(IntegrationTestParameter.customIdParam);
 
@@ -43,9 +39,16 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
     final testPackagePath =
         argResults[IntegrationTestParameter.testPackagePathParam] as String;
 
+    final devices =
+        (argResults[IntegrationTestParameter.devicesParam] as String)
+            .split(",")
+            .map((device) => device.trim())
+            .toList();
+
     return IntegrationTestIosOption(
       browserstackUsername:
           argResults[IntegrationTestParameter.browserstackUserParam] as String,
+      devices: devices,
       browserstackAccessKey:
           argResults[IntegrationTestParameter.browserstackAccessKeyParam]
               as String,
@@ -57,6 +60,4 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
   String get basicAuthValue {
     return "Basic ${base64Encode(utf8.encode("$browserstackUsername:$browserstackAccessKey"))}";
   }
-
-  List<String> get devices => ["iPhone 14 Plus-16"];
 }

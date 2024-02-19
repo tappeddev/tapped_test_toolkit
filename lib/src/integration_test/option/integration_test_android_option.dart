@@ -18,7 +18,7 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     required File apk,
     required File testSuite,
     String? customId,
-    @Default(["Samsung Galaxy S9 Plus-9.0"]) List<String> devices,
+    required List<String> devices,
     @Default(true) bool networkLogs,
     @Default(true) bool deviceLogs,
   }) = _IntegrationTestAndroidOption;
@@ -27,19 +27,22 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     List<String> arguments,
   ) async {
     final parser = ArgParser()
-      ..addOption(IntegrationTestParameter.apkPathParam, mandatory: true)
-      ..addOption(IntegrationTestParameter.testSuitePathParam, mandatory: true)
+      ..addOption(IntegrationTestParameter.apkPathParam)
+      ..addOption(IntegrationTestParameter.testSuitePathParam)
+      ..addOption(IntegrationTestParameter.browserstackUserParam)
+      ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
       ..addOption(
-        IntegrationTestParameter.browserstackUserParam,
-        mandatory: true,
-      )
-      ..addOption(
-        IntegrationTestParameter.browserstackAccessKeyParam,
-        mandatory: true,
-      )
-      ..addOption(IntegrationTestParameter.customIdParam);
+        IntegrationTestParameter.devicesParam,
+        defaultsTo: "Samsung Galaxy S22-12.0",
+      );
 
     final argResults = parser.parse(arguments);
+
+    final devices =
+        (argResults[IntegrationTestParameter.devicesParam] as String)
+            .split(",")
+            .map((device) => device.trim())
+            .toList();
 
     final apkPath = argResults[IntegrationTestParameter.apkPathParam] as String;
 
@@ -49,6 +52,7 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     return IntegrationTestAndroidOption(
       apk: await fileFromRelativePath(apkPath),
       testSuite: await fileFromRelativePath(testSuitePath),
+      devices: devices,
       browserstackUsername:
           argResults[IntegrationTestParameter.browserstackUserParam] as String,
       browserstackAccessKey:

@@ -14,5 +14,7 @@ class IntegrationTestParameter {
 
   static const String testPackagePathParam = "path";
 
+  static const String devicesParam = "devices";
+
 // endregion
 }
