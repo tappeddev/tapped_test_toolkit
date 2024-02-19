@@ -17,7 +17,7 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     required String browserstackAccessKey,
     required File apk,
     required File testSuite,
-    @Default(["Samsung Galaxy S9 Plus-9.0"]) List<String> devices,
+    required List<String> devices,
     @Default(true) bool networkLogs,
     @Default(true) bool deviceLogs,
   }) = _IntegrationTestAndroidOption;
@@ -29,9 +29,19 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
       ..addOption(IntegrationTestParameter.apkPathParam)
       ..addOption(IntegrationTestParameter.testSuitePathParam)
       ..addOption(IntegrationTestParameter.browserstackUserParam)
-      ..addOption(IntegrationTestParameter.browserstackAccessKeyParam);
+      ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
+      ..addOption(
+        IntegrationTestParameter.devicesParam,
+        defaultsTo: "Samsung Galaxy S22-12.0",
+      );
 
     final argResults = parser.parse(arguments);
+
+    final devices =
+        (argResults[IntegrationTestParameter.devicesParam] as String)
+            .split(",")
+            .map((device) => device.trim())
+            .toList();
 
     final apkPath = argResults[IntegrationTestParameter.apkPathParam] as String;
 
@@ -41,6 +51,7 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     return IntegrationTestAndroidOption(
       apk: await fileFromRelativePath(apkPath),
       testSuite: await fileFromRelativePath(testSuitePath),
+      devices: devices,
       browserstackUsername:
           argResults[IntegrationTestParameter.browserstackUserParam] as String,
       browserstackAccessKey:

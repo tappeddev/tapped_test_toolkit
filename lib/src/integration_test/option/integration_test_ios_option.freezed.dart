@@ -12,13 +12,14 @@ part of 'integration_test_ios_option.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$IntegrationTestIosOption {
   String get browserstackUsername => throw _privateConstructorUsedError;
   String get browserstackAccessKey => throw _privateConstructorUsedError;
   File get testPackage => throw _privateConstructorUsedError;
+  List<String> get devices => throw _privateConstructorUsedError;
   bool get networkLogs => throw _privateConstructorUsedError;
   bool get deviceLogs => throw _privateConstructorUsedError;
 
@@ -37,6 +38,7 @@ abstract class $IntegrationTestIosOptionCopyWith<$Res> {
       {String browserstackUsername,
       String browserstackAccessKey,
       File testPackage,
+      List<String> devices,
       bool networkLogs,
       bool deviceLogs});
 }
@@ -58,6 +60,7 @@ class _$IntegrationTestIosOptionCopyWithImpl<$Res,
     Object? browserstackUsername = null,
     Object? browserstackAccessKey = null,
     Object? testPackage = null,
+    Object? devices = null,
     Object? networkLogs = null,
     Object? deviceLogs = null,
   }) {
@@ -74,6 +77,10 @@ class _$IntegrationTestIosOptionCopyWithImpl<$Res,
           ? _value.testPackage
           : testPackage // ignore: cast_nullable_to_non_nullable
               as File,
+      devices: null == devices
+          ? _value.devices
+          : devices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       networkLogs: null == networkLogs
           ? _value.networkLogs
           : networkLogs // ignore: cast_nullable_to_non_nullable
@@ -99,6 +106,7 @@ abstract class _$$IntegrationTestIosOptionImplCopyWith<$Res>
       {String browserstackUsername,
       String browserstackAccessKey,
       File testPackage,
+      List<String> devices,
       bool networkLogs,
       bool deviceLogs});
 }
@@ -119,6 +127,7 @@ class __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>
     Object? browserstackUsername = null,
     Object? browserstackAccessKey = null,
     Object? testPackage = null,
+    Object? devices = null,
     Object? networkLogs = null,
     Object? deviceLogs = null,
   }) {
@@ -135,6 +144,10 @@ class __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>
           ? _value.testPackage
           : testPackage // ignore: cast_nullable_to_non_nullable
               as File,
+      devices: null == devices
+          ? _value._devices
+          : devices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       networkLogs: null == networkLogs
           ? _value.networkLogs
           : networkLogs // ignore: cast_nullable_to_non_nullable
@@ -154,9 +167,11 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
       {required this.browserstackUsername,
       required this.browserstackAccessKey,
       required this.testPackage,
+      final List<String> devices = const ["Samsung Galaxy S22-12.0"],
       this.networkLogs = true,
       this.deviceLogs = true})
-      : super._();
+      : _devices = devices,
+        super._();
 
   @override
   final String browserstackUsername;
@@ -164,6 +179,15 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
   final String browserstackAccessKey;
   @override
   final File testPackage;
+  final List<String> _devices;
+  @override
+  @JsonKey()
+  List<String> get devices {
+    if (_devices is EqualUnmodifiableListView) return _devices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_devices);
+  }
+
   @override
   @JsonKey()
   final bool networkLogs;
@@ -173,7 +197,7 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
 
   @override
   String toString() {
-    return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
+    return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, devices: $devices, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
   }
 
   @override
@@ -187,6 +211,7 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
                 other.browserstackAccessKey == browserstackAccessKey) &&
             (identical(other.testPackage, testPackage) ||
                 other.testPackage == testPackage) &&
+            const DeepCollectionEquality().equals(other._devices, _devices) &&
             (identical(other.networkLogs, networkLogs) ||
                 other.networkLogs == networkLogs) &&
             (identical(other.deviceLogs, deviceLogs) ||
@@ -194,8 +219,14 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, browserstackUsername,
-      browserstackAccessKey, testPackage, networkLogs, deviceLogs);
+  int get hashCode => Object.hash(
+      runtimeType,
+      browserstackUsername,
+      browserstackAccessKey,
+      testPackage,
+      const DeepCollectionEquality().hash(_devices),
+      networkLogs,
+      deviceLogs);
 
   @JsonKey(ignore: true)
   @override
@@ -210,6 +241,7 @@ abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
       {required final String browserstackUsername,
       required final String browserstackAccessKey,
       required final File testPackage,
+      final List<String> devices,
       final bool networkLogs,
       final bool deviceLogs}) = _$IntegrationTestIosOptionImpl;
   const _IntegrationTestIosOption._() : super._();
@@ -220,6 +252,8 @@ abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
   String get browserstackAccessKey;
   @override
   File get testPackage;
+  @override
+  List<String> get devices;
   @override
   bool get networkLogs;
   @override
