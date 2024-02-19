@@ -12,7 +12,7 @@ part of 'integration_test_android_option.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$IntegrationTestAndroidOption {
@@ -183,7 +183,7 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
       required this.browserstackAccessKey,
       required this.apk,
       required this.testSuite,
-      final List<String> devices = const ["Samsung Galaxy S9 Plus-9.0"],
+      final List<String> devices = const ["Samsung Galaxy S22-12.0"],
       this.networkLogs = true,
       this.deviceLogs = true})
       : _devices = devices,
