@@ -183,7 +183,7 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
       required this.browserstackAccessKey,
       required this.apk,
       required this.testSuite,
-      final List<String> devices = const ["Samsung Galaxy S22-12.0"],
+      required final List<String> devices,
       this.networkLogs = true,
       this.deviceLogs = true})
       : _devices = devices,
@@ -199,7 +199,6 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
   final File testSuite;
   final List<String> _devices;
   @override
-  @JsonKey()
   List<String> get devices {
     if (_devices is EqualUnmodifiableListView) return _devices;
     // ignore: implicit_dynamic_type
@@ -264,7 +263,7 @@ abstract class _IntegrationTestAndroidOption
       required final String browserstackAccessKey,
       required final File apk,
       required final File testSuite,
-      final List<String> devices,
+      required final List<String> devices,
       final bool networkLogs,
       final bool deviceLogs}) = _$IntegrationTestAndroidOptionImpl;
   const _IntegrationTestAndroidOption._() : super._();
