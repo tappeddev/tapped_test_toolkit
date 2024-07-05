@@ -167,7 +167,7 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
       {required this.browserstackUsername,
       required this.browserstackAccessKey,
       required this.testPackage,
-      final List<String> devices = const ["Samsung Galaxy S22-12.0"],
+      required final List<String> devices,
       this.networkLogs = true,
       this.deviceLogs = true})
       : _devices = devices,
@@ -181,7 +181,6 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
   final File testPackage;
   final List<String> _devices;
   @override
-  @JsonKey()
   List<String> get devices {
     if (_devices is EqualUnmodifiableListView) return _devices;
     // ignore: implicit_dynamic_type
@@ -241,7 +240,7 @@ abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
       {required final String browserstackUsername,
       required final String browserstackAccessKey,
       required final File testPackage,
-      final List<String> devices,
+      required final List<String> devices,
       final bool networkLogs,
       final bool deviceLogs}) = _$IntegrationTestIosOptionImpl;
   const _IntegrationTestIosOption._() : super._();
