@@ -17,6 +17,7 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
     required String browserstackAccessKey,
     required File apk,
     required File testSuite,
+    String? customId,
     required List<String> devices,
     @Default(true) bool networkLogs,
     @Default(true) bool deviceLogs,
@@ -33,7 +34,8 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
       ..addOption(
         IntegrationTestParameter.devicesParam,
         defaultsTo: "Samsung Galaxy S22-12.0",
-      );
+      )
+      ..addOption(IntegrationTestParameter.customIdParam);
 
     final argResults = parser.parse(arguments);
 
@@ -57,6 +59,7 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
       browserstackAccessKey:
           argResults[IntegrationTestParameter.browserstackAccessKeyParam]
               as String,
+      customId: argResults[IntegrationTestParameter.customIdParam],
     );
   }
 
