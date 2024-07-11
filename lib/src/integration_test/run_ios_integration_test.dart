@@ -3,10 +3,6 @@ import 'package:tapped_test_toolkit/src/integration_test/browser_stack_api.dart'
 import 'package:tapped_test_toolkit/src/integration_test/browser_stack_test_status.dart';
 import 'package:tapped_test_toolkit/src/integration_test/option/integration_test_ios_option.dart';
 
-void main(List<String> arguments) {
-  runIosIntegrationTest(arguments);
-}
-
 Future<void> runIosIntegrationTest(List<String> arguments) async {
   const api = BrowserStackApi();
   final option = await IntegrationTestIosOption.fromArguments(arguments);
