@@ -12,6 +12,7 @@ class BrowserStackApi {
     required String url,
     required File file,
     required String basicAuthHeader,
+    Map<String, String> fields = const <String, String>{},
   }) async {
     final filename = file.path.split("/").last;
 
@@ -39,7 +40,8 @@ class BrowserStackApi {
       },
     )
       ..headers[HttpHeaders.authorizationHeader] = basicAuthHeader
-      ..files.add(await http.MultipartFile.fromPath("file", file.path));
+      ..files.add(await http.MultipartFile.fromPath("file", file.path))
+      ..fields.addAll(fields);
 
     final response = await http.Response.fromStream(await request.send());
 

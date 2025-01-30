@@ -20,6 +20,7 @@ mixin _$IntegrationTestAndroidOption {
   String get browserstackAccessKey => throw _privateConstructorUsedError;
   File get apk => throw _privateConstructorUsedError;
   File get testSuite => throw _privateConstructorUsedError;
+  String? get customId => throw _privateConstructorUsedError;
   List<String> get devices => throw _privateConstructorUsedError;
   bool get networkLogs => throw _privateConstructorUsedError;
   bool get deviceLogs => throw _privateConstructorUsedError;
@@ -42,6 +43,7 @@ abstract class $IntegrationTestAndroidOptionCopyWith<$Res> {
       String browserstackAccessKey,
       File apk,
       File testSuite,
+      String? customId,
       List<String> devices,
       bool networkLogs,
       bool deviceLogs});
@@ -65,6 +67,7 @@ class _$IntegrationTestAndroidOptionCopyWithImpl<$Res,
     Object? browserstackAccessKey = null,
     Object? apk = null,
     Object? testSuite = null,
+    Object? customId = freezed,
     Object? devices = null,
     Object? networkLogs = null,
     Object? deviceLogs = null,
@@ -86,6 +89,10 @@ class _$IntegrationTestAndroidOptionCopyWithImpl<$Res,
           ? _value.testSuite
           : testSuite // ignore: cast_nullable_to_non_nullable
               as File,
+      customId: freezed == customId
+          ? _value.customId
+          : customId // ignore: cast_nullable_to_non_nullable
+              as String?,
       devices: null == devices
           ? _value.devices
           : devices // ignore: cast_nullable_to_non_nullable
@@ -116,6 +123,7 @@ abstract class _$$IntegrationTestAndroidOptionImplCopyWith<$Res>
       String browserstackAccessKey,
       File apk,
       File testSuite,
+      String? customId,
       List<String> devices,
       bool networkLogs,
       bool deviceLogs});
@@ -138,6 +146,7 @@ class __$$IntegrationTestAndroidOptionImplCopyWithImpl<$Res>
     Object? browserstackAccessKey = null,
     Object? apk = null,
     Object? testSuite = null,
+    Object? customId = freezed,
     Object? devices = null,
     Object? networkLogs = null,
     Object? deviceLogs = null,
@@ -159,6 +168,10 @@ class __$$IntegrationTestAndroidOptionImplCopyWithImpl<$Res>
           ? _value.testSuite
           : testSuite // ignore: cast_nullable_to_non_nullable
               as File,
+      customId: freezed == customId
+          ? _value.customId
+          : customId // ignore: cast_nullable_to_non_nullable
+              as String?,
       devices: null == devices
           ? _value._devices
           : devices // ignore: cast_nullable_to_non_nullable
@@ -183,6 +196,7 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
       required this.browserstackAccessKey,
       required this.apk,
       required this.testSuite,
+      this.customId,
       required final List<String> devices,
       this.networkLogs = true,
       this.deviceLogs = true})
@@ -197,6 +211,8 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
   final File apk;
   @override
   final File testSuite;
+  @override
+  final String? customId;
   final List<String> _devices;
   @override
   List<String> get devices {
@@ -214,7 +230,7 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
 
   @override
   String toString() {
-    return 'IntegrationTestAndroidOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, apk: $apk, testSuite: $testSuite, devices: $devices, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
+    return 'IntegrationTestAndroidOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, apk: $apk, testSuite: $testSuite, customId: $customId, devices: $devices, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
   }
 
   @override
@@ -229,6 +245,8 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
             (identical(other.apk, apk) || other.apk == apk) &&
             (identical(other.testSuite, testSuite) ||
                 other.testSuite == testSuite) &&
+            (identical(other.customId, customId) ||
+                other.customId == customId) &&
             const DeepCollectionEquality().equals(other._devices, _devices) &&
             (identical(other.networkLogs, networkLogs) ||
                 other.networkLogs == networkLogs) &&
@@ -243,6 +261,7 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
       browserstackAccessKey,
       apk,
       testSuite,
+      customId,
       const DeepCollectionEquality().hash(_devices),
       networkLogs,
       deviceLogs);
@@ -263,6 +282,7 @@ abstract class _IntegrationTestAndroidOption
       required final String browserstackAccessKey,
       required final File apk,
       required final File testSuite,
+      final String? customId,
       required final List<String> devices,
       final bool networkLogs,
       final bool deviceLogs}) = _$IntegrationTestAndroidOptionImpl;
@@ -276,6 +296,8 @@ abstract class _IntegrationTestAndroidOption
   File get apk;
   @override
   File get testSuite;
+  @override
+  String? get customId;
   @override
   List<String> get devices;
   @override

@@ -15,6 +15,7 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
     required String browserstackUsername,
     required String browserstackAccessKey,
     required File testPackage,
+    String? customId,
     required List<String> devices,
     @Default(true) bool networkLogs,
     @Default(true) bool deviceLogs,
@@ -30,7 +31,8 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
       ..addOption(
         IntegrationTestParameter.devicesParam,
         defaultsTo: "iPhone 14 Plus-16",
-      );
+      )
+      ..addOption(IntegrationTestParameter.customIdParam);
 
     final argResults = parser.parse(arguments);
 
@@ -51,6 +53,7 @@ class IntegrationTestIosOption with _$IntegrationTestIosOption {
           argResults[IntegrationTestParameter.browserstackAccessKeyParam]
               as String,
       testPackage: await fileFromRelativePath(testPackagePath),
+      customId: argResults[IntegrationTestParameter.customIdParam],
     );
   }
 
