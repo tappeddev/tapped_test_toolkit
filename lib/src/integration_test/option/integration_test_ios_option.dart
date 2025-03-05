@@ -24,16 +24,15 @@ abstract class IntegrationTestIosOption with _$IntegrationTestIosOption {
   static Future<IntegrationTestIosOption> fromArguments(
     List<String> arguments,
   ) async {
-    final parser =
-        ArgParser()
-          ..addOption(IntegrationTestParameter.browserstackUserParam)
-          ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
-          ..addOption(IntegrationTestParameter.testPackagePathParam)
-          ..addOption(
-            IntegrationTestParameter.devicesParam,
-            defaultsTo: "iPhone 14 Plus-16",
-          )
-          ..addOption(IntegrationTestParameter.customIdParam);
+    final parser = ArgParser()
+      ..addOption(IntegrationTestParameter.browserstackUserParam)
+      ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
+      ..addOption(IntegrationTestParameter.testPackagePathParam)
+      ..addOption(
+        IntegrationTestParameter.devicesParam,
+        defaultsTo: "iPhone 14 Plus-16",
+      )
+      ..addOption(IntegrationTestParameter.customIdParam);
 
     final argResults = parser.parse(arguments);
 

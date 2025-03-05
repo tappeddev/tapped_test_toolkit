@@ -19,30 +19,29 @@ class BrowserStackApi {
     stdout.writeln('Upload: $filename:\n');
 
     int? uploadPercent;
-    final request =
-        ProgressUpdateMultipartRequest(
-            "POST",
-            Uri.parse(url),
-            onProgress: (bytes, totalBytes) {
-              final remainingMbs = (bytes / 1024 / 1024);
-              final totalMbs = (totalBytes / 1024 / 1024);
+    final request = ProgressUpdateMultipartRequest(
+      "POST",
+      Uri.parse(url),
+      onProgress: (bytes, totalBytes) {
+        final remainingMbs = (bytes / 1024 / 1024);
+        final totalMbs = (totalBytes / 1024 / 1024);
 
-              final percent = ((100 * remainingMbs) / totalMbs).round();
+        final percent = ((100 * remainingMbs) / totalMbs).round();
 
-              if (percent != uploadPercent) {
-                // https://stackoverflow.com/questions/72917845/how-to-remove-previous-printed-line-from-console-in-dart
-                // Append a \r to make sure we update the statement instead of adding a new one.
-                // Keep in mind to use write instead of writeln.
-                stdout.write(
-                  '\r🚀 Uploading file: $filename... $percent% (${remainingMbs.toStringAsFixed(2)}MB / ${totalMbs.toStringAsFixed(2)}MB)',
-                );
-                uploadPercent = percent;
-              }
-            },
-          )
-          ..headers[HttpHeaders.authorizationHeader] = basicAuthHeader
-          ..files.add(await http.MultipartFile.fromPath("file", file.path))
-          ..fields.addAll(fields);
+        if (percent != uploadPercent) {
+          // https://stackoverflow.com/questions/72917845/how-to-remove-previous-printed-line-from-console-in-dart
+          // Append a \r to make sure we update the statement instead of adding a new one.
+          // Keep in mind to use write instead of writeln.
+          stdout.write(
+            '\r🚀 Uploading file: $filename... $percent% (${remainingMbs.toStringAsFixed(2)}MB / ${totalMbs.toStringAsFixed(2)}MB)',
+          );
+          uploadPercent = percent;
+        }
+      },
+    )
+      ..headers[HttpHeaders.authorizationHeader] = basicAuthHeader
+      ..files.add(await http.MultipartFile.fromPath("file", file.path))
+      ..fields.addAll(fields);
 
     final response = await http.Response.fromStream(await request.send());
 
@@ -125,11 +124,10 @@ class BrowserStackApi {
 extension on http.Response {
   Map<K, V> handleResult<K, V>() {
     if (statusCode != 200) {
-      final buffer =
-          StringBuffer()
-            ..writeln("Request to ${request?.url} failed.")
-            ..writeln("Code: $statusCode")
-            ..writeln("Body: $body");
+      final buffer = StringBuffer()
+        ..writeln("Request to ${request?.url} failed.")
+        ..writeln("Code: $statusCode")
+        ..writeln("Body: $body");
       stderr.write(buffer);
       exit(-1);
     }
