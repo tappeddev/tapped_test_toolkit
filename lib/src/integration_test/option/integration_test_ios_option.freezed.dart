@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,278 +10,157 @@ part of 'integration_test_ios_option.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$IntegrationTestIosOption {
-  String get browserstackUsername => throw _privateConstructorUsedError;
-  String get browserstackAccessKey => throw _privateConstructorUsedError;
-  File get testPackage => throw _privateConstructorUsedError;
-  String? get customId => throw _privateConstructorUsedError;
-  List<String> get devices => throw _privateConstructorUsedError;
-  bool get networkLogs => throw _privateConstructorUsedError;
-  bool get deviceLogs => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $IntegrationTestIosOptionCopyWith<IntegrationTestIosOption> get copyWith =>
-      throw _privateConstructorUsedError;
+ String get browserstackUsername; String get browserstackAccessKey; File get testPackage; String? get customId; List<String> get devices; bool get networkLogs; bool get deviceLogs;
+/// Create a copy of IntegrationTestIosOption
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$IntegrationTestIosOptionCopyWith<IntegrationTestIosOption> get copyWith => _$IntegrationTestIosOptionCopyWithImpl<IntegrationTestIosOption>(this as IntegrationTestIosOption, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is IntegrationTestIosOption&&(identical(other.browserstackUsername, browserstackUsername) || other.browserstackUsername == browserstackUsername)&&(identical(other.browserstackAccessKey, browserstackAccessKey) || other.browserstackAccessKey == browserstackAccessKey)&&(identical(other.testPackage, testPackage) || other.testPackage == testPackage)&&(identical(other.customId, customId) || other.customId == customId)&&const DeepCollectionEquality().equals(other.devices, devices)&&(identical(other.networkLogs, networkLogs) || other.networkLogs == networkLogs)&&(identical(other.deviceLogs, deviceLogs) || other.deviceLogs == deviceLogs));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,browserstackUsername,browserstackAccessKey,testPackage,customId,const DeepCollectionEquality().hash(devices),networkLogs,deviceLogs);
+
+@override
+String toString() {
+  return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, customId: $customId, devices: $devices, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $IntegrationTestIosOptionCopyWith<$Res> {
-  factory $IntegrationTestIosOptionCopyWith(IntegrationTestIosOption value,
-          $Res Function(IntegrationTestIosOption) then) =
-      _$IntegrationTestIosOptionCopyWithImpl<$Res, IntegrationTestIosOption>;
-  @useResult
-  $Res call(
-      {String browserstackUsername,
-      String browserstackAccessKey,
-      File testPackage,
-      String? customId,
-      List<String> devices,
-      bool networkLogs,
-      bool deviceLogs});
-}
+abstract mixin class $IntegrationTestIosOptionCopyWith<$Res>  {
+  factory $IntegrationTestIosOptionCopyWith(IntegrationTestIosOption value, $Res Function(IntegrationTestIosOption) _then) = _$IntegrationTestIosOptionCopyWithImpl;
+@useResult
+$Res call({
+ String browserstackUsername, String browserstackAccessKey, File testPackage, String? customId, List<String> devices, bool networkLogs, bool deviceLogs
+});
 
+
+
+
+}
 /// @nodoc
-class _$IntegrationTestIosOptionCopyWithImpl<$Res,
-        $Val extends IntegrationTestIosOption>
+class _$IntegrationTestIosOptionCopyWithImpl<$Res>
     implements $IntegrationTestIosOptionCopyWith<$Res> {
-  _$IntegrationTestIosOptionCopyWithImpl(this._value, this._then);
+  _$IntegrationTestIosOptionCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final IntegrationTestIosOption _self;
+  final $Res Function(IntegrationTestIosOption) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? browserstackUsername = null,
-    Object? browserstackAccessKey = null,
-    Object? testPackage = null,
-    Object? customId = freezed,
-    Object? devices = null,
-    Object? networkLogs = null,
-    Object? deviceLogs = null,
-  }) {
-    return _then(_value.copyWith(
-      browserstackUsername: null == browserstackUsername
-          ? _value.browserstackUsername
-          : browserstackUsername // ignore: cast_nullable_to_non_nullable
-              as String,
-      browserstackAccessKey: null == browserstackAccessKey
-          ? _value.browserstackAccessKey
-          : browserstackAccessKey // ignore: cast_nullable_to_non_nullable
-              as String,
-      testPackage: null == testPackage
-          ? _value.testPackage
-          : testPackage // ignore: cast_nullable_to_non_nullable
-              as File,
-      customId: freezed == customId
-          ? _value.customId
-          : customId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      devices: null == devices
-          ? _value.devices
-          : devices // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      networkLogs: null == networkLogs
-          ? _value.networkLogs
-          : networkLogs // ignore: cast_nullable_to_non_nullable
-              as bool,
-      deviceLogs: null == deviceLogs
-          ? _value.deviceLogs
-          : deviceLogs // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
+/// Create a copy of IntegrationTestIosOption
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? browserstackUsername = null,Object? browserstackAccessKey = null,Object? testPackage = null,Object? customId = freezed,Object? devices = null,Object? networkLogs = null,Object? deviceLogs = null,}) {
+  return _then(_self.copyWith(
+browserstackUsername: null == browserstackUsername ? _self.browserstackUsername : browserstackUsername // ignore: cast_nullable_to_non_nullable
+as String,browserstackAccessKey: null == browserstackAccessKey ? _self.browserstackAccessKey : browserstackAccessKey // ignore: cast_nullable_to_non_nullable
+as String,testPackage: null == testPackage ? _self.testPackage : testPackage // ignore: cast_nullable_to_non_nullable
+as File,customId: freezed == customId ? _self.customId : customId // ignore: cast_nullable_to_non_nullable
+as String?,devices: null == devices ? _self.devices : devices // ignore: cast_nullable_to_non_nullable
+as List<String>,networkLogs: null == networkLogs ? _self.networkLogs : networkLogs // ignore: cast_nullable_to_non_nullable
+as bool,deviceLogs: null == deviceLogs ? _self.deviceLogs : deviceLogs // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-abstract class _$$IntegrationTestIosOptionImplCopyWith<$Res>
-    implements $IntegrationTestIosOptionCopyWith<$Res> {
-  factory _$$IntegrationTestIosOptionImplCopyWith(
-          _$IntegrationTestIosOptionImpl value,
-          $Res Function(_$IntegrationTestIosOptionImpl) then) =
-      __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String browserstackUsername,
-      String browserstackAccessKey,
-      File testPackage,
-      String? customId,
-      List<String> devices,
-      bool networkLogs,
-      bool deviceLogs});
 }
 
-/// @nodoc
-class __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>
-    extends _$IntegrationTestIosOptionCopyWithImpl<$Res,
-        _$IntegrationTestIosOptionImpl>
-    implements _$$IntegrationTestIosOptionImplCopyWith<$Res> {
-  __$$IntegrationTestIosOptionImplCopyWithImpl(
-      _$IntegrationTestIosOptionImpl _value,
-      $Res Function(_$IntegrationTestIosOptionImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? browserstackUsername = null,
-    Object? browserstackAccessKey = null,
-    Object? testPackage = null,
-    Object? customId = freezed,
-    Object? devices = null,
-    Object? networkLogs = null,
-    Object? deviceLogs = null,
-  }) {
-    return _then(_$IntegrationTestIosOptionImpl(
-      browserstackUsername: null == browserstackUsername
-          ? _value.browserstackUsername
-          : browserstackUsername // ignore: cast_nullable_to_non_nullable
-              as String,
-      browserstackAccessKey: null == browserstackAccessKey
-          ? _value.browserstackAccessKey
-          : browserstackAccessKey // ignore: cast_nullable_to_non_nullable
-              as String,
-      testPackage: null == testPackage
-          ? _value.testPackage
-          : testPackage // ignore: cast_nullable_to_non_nullable
-              as File,
-      customId: freezed == customId
-          ? _value.customId
-          : customId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      devices: null == devices
-          ? _value._devices
-          : devices // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      networkLogs: null == networkLogs
-          ? _value.networkLogs
-          : networkLogs // ignore: cast_nullable_to_non_nullable
-              as bool,
-      deviceLogs: null == deviceLogs
-          ? _value.deviceLogs
-          : deviceLogs // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
 
 /// @nodoc
 
-class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
-  const _$IntegrationTestIosOptionImpl(
-      {required this.browserstackUsername,
-      required this.browserstackAccessKey,
-      required this.testPackage,
-      this.customId,
-      required final List<String> devices,
-      this.networkLogs = true,
-      this.deviceLogs = true})
-      : _devices = devices,
-        super._();
 
-  @override
-  final String browserstackUsername;
-  @override
-  final String browserstackAccessKey;
-  @override
-  final File testPackage;
-  @override
-  final String? customId;
-  final List<String> _devices;
-  @override
-  List<String> get devices {
-    if (_devices is EqualUnmodifiableListView) return _devices;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_devices);
-  }
+class _IntegrationTestIosOption extends IntegrationTestIosOption {
+  const _IntegrationTestIosOption({required this.browserstackUsername, required this.browserstackAccessKey, required this.testPackage, this.customId, required final  List<String> devices, this.networkLogs = true, this.deviceLogs = true}): _devices = devices,super._();
+  
 
-  @override
-  @JsonKey()
-  final bool networkLogs;
-  @override
-  @JsonKey()
-  final bool deviceLogs;
-
-  @override
-  String toString() {
-    return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, customId: $customId, devices: $devices, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$IntegrationTestIosOptionImpl &&
-            (identical(other.browserstackUsername, browserstackUsername) ||
-                other.browserstackUsername == browserstackUsername) &&
-            (identical(other.browserstackAccessKey, browserstackAccessKey) ||
-                other.browserstackAccessKey == browserstackAccessKey) &&
-            (identical(other.testPackage, testPackage) ||
-                other.testPackage == testPackage) &&
-            (identical(other.customId, customId) ||
-                other.customId == customId) &&
-            const DeepCollectionEquality().equals(other._devices, _devices) &&
-            (identical(other.networkLogs, networkLogs) ||
-                other.networkLogs == networkLogs) &&
-            (identical(other.deviceLogs, deviceLogs) ||
-                other.deviceLogs == deviceLogs));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      browserstackUsername,
-      browserstackAccessKey,
-      testPackage,
-      customId,
-      const DeepCollectionEquality().hash(_devices),
-      networkLogs,
-      deviceLogs);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$IntegrationTestIosOptionImplCopyWith<_$IntegrationTestIosOptionImpl>
-      get copyWith => __$$IntegrationTestIosOptionImplCopyWithImpl<
-          _$IntegrationTestIosOptionImpl>(this, _$identity);
+@override final  String browserstackUsername;
+@override final  String browserstackAccessKey;
+@override final  File testPackage;
+@override final  String? customId;
+ final  List<String> _devices;
+@override List<String> get devices {
+  if (_devices is EqualUnmodifiableListView) return _devices;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_devices);
 }
 
-abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
-  const factory _IntegrationTestIosOption(
-      {required final String browserstackUsername,
-      required final String browserstackAccessKey,
-      required final File testPackage,
-      final String? customId,
-      required final List<String> devices,
-      final bool networkLogs,
-      final bool deviceLogs}) = _$IntegrationTestIosOptionImpl;
-  const _IntegrationTestIosOption._() : super._();
+@override@JsonKey() final  bool networkLogs;
+@override@JsonKey() final  bool deviceLogs;
 
-  @override
-  String get browserstackUsername;
-  @override
-  String get browserstackAccessKey;
-  @override
-  File get testPackage;
-  @override
-  String? get customId;
-  @override
-  List<String> get devices;
-  @override
-  bool get networkLogs;
-  @override
-  bool get deviceLogs;
-  @override
-  @JsonKey(ignore: true)
-  _$$IntegrationTestIosOptionImplCopyWith<_$IntegrationTestIosOptionImpl>
-      get copyWith => throw _privateConstructorUsedError;
+/// Create a copy of IntegrationTestIosOption
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$IntegrationTestIosOptionCopyWith<_IntegrationTestIosOption> get copyWith => __$IntegrationTestIosOptionCopyWithImpl<_IntegrationTestIosOption>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _IntegrationTestIosOption&&(identical(other.browserstackUsername, browserstackUsername) || other.browserstackUsername == browserstackUsername)&&(identical(other.browserstackAccessKey, browserstackAccessKey) || other.browserstackAccessKey == browserstackAccessKey)&&(identical(other.testPackage, testPackage) || other.testPackage == testPackage)&&(identical(other.customId, customId) || other.customId == customId)&&const DeepCollectionEquality().equals(other._devices, _devices)&&(identical(other.networkLogs, networkLogs) || other.networkLogs == networkLogs)&&(identical(other.deviceLogs, deviceLogs) || other.deviceLogs == deviceLogs));
 }
+
+
+@override
+int get hashCode => Object.hash(runtimeType,browserstackUsername,browserstackAccessKey,testPackage,customId,const DeepCollectionEquality().hash(_devices),networkLogs,deviceLogs);
+
+@override
+String toString() {
+  return 'IntegrationTestIosOption(browserstackUsername: $browserstackUsername, browserstackAccessKey: $browserstackAccessKey, testPackage: $testPackage, customId: $customId, devices: $devices, networkLogs: $networkLogs, deviceLogs: $deviceLogs)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$IntegrationTestIosOptionCopyWith<$Res> implements $IntegrationTestIosOptionCopyWith<$Res> {
+  factory _$IntegrationTestIosOptionCopyWith(_IntegrationTestIosOption value, $Res Function(_IntegrationTestIosOption) _then) = __$IntegrationTestIosOptionCopyWithImpl;
+@override @useResult
+$Res call({
+ String browserstackUsername, String browserstackAccessKey, File testPackage, String? customId, List<String> devices, bool networkLogs, bool deviceLogs
+});
+
+
+
+
+}
+/// @nodoc
+class __$IntegrationTestIosOptionCopyWithImpl<$Res>
+    implements _$IntegrationTestIosOptionCopyWith<$Res> {
+  __$IntegrationTestIosOptionCopyWithImpl(this._self, this._then);
+
+  final _IntegrationTestIosOption _self;
+  final $Res Function(_IntegrationTestIosOption) _then;
+
+/// Create a copy of IntegrationTestIosOption
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? browserstackUsername = null,Object? browserstackAccessKey = null,Object? testPackage = null,Object? customId = freezed,Object? devices = null,Object? networkLogs = null,Object? deviceLogs = null,}) {
+  return _then(_IntegrationTestIosOption(
+browserstackUsername: null == browserstackUsername ? _self.browserstackUsername : browserstackUsername // ignore: cast_nullable_to_non_nullable
+as String,browserstackAccessKey: null == browserstackAccessKey ? _self.browserstackAccessKey : browserstackAccessKey // ignore: cast_nullable_to_non_nullable
+as String,testPackage: null == testPackage ? _self.testPackage : testPackage // ignore: cast_nullable_to_non_nullable
+as File,customId: freezed == customId ? _self.customId : customId // ignore: cast_nullable_to_non_nullable
+as String?,devices: null == devices ? _self._devices : devices // ignore: cast_nullable_to_non_nullable
+as List<String>,networkLogs: null == networkLogs ? _self.networkLogs : networkLogs // ignore: cast_nullable_to_non_nullable
+as bool,deviceLogs: null == deviceLogs ? _self.deviceLogs : deviceLogs // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
+}
+
+// dart format on

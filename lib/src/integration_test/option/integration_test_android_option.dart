@@ -26,16 +26,17 @@ class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
   static Future<IntegrationTestAndroidOption> fromArguments(
     List<String> arguments,
   ) async {
-    final parser = ArgParser()
-      ..addOption(IntegrationTestParameter.apkPathParam)
-      ..addOption(IntegrationTestParameter.testSuitePathParam)
-      ..addOption(IntegrationTestParameter.browserstackUserParam)
-      ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
-      ..addOption(
-        IntegrationTestParameter.devicesParam,
-        defaultsTo: "Samsung Galaxy S22-12.0",
-      )
-      ..addOption(IntegrationTestParameter.customIdParam);
+    final parser =
+        ArgParser()
+          ..addOption(IntegrationTestParameter.apkPathParam)
+          ..addOption(IntegrationTestParameter.testSuitePathParam)
+          ..addOption(IntegrationTestParameter.browserstackUserParam)
+          ..addOption(IntegrationTestParameter.browserstackAccessKeyParam)
+          ..addOption(
+            IntegrationTestParameter.devicesParam,
+            defaultsTo: "Samsung Galaxy S22-12.0",
+          )
+          ..addOption(IntegrationTestParameter.customIdParam);
 
     final argResults = parser.parse(arguments);
 
