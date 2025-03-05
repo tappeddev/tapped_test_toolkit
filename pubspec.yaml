@@ -12,7 +12,7 @@ dependencies:
   http: ^1.3.0
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
-  path: ^1.9.1
+  path: ^1.9.0
   # formatting the time of some jobs
   intl: ^0.19.0
 
