@@ -9,7 +9,8 @@ import 'package:tapped_test_toolkit/src/integration_test/option/integration_test
 part 'integration_test_android_option.freezed.dart';
 
 @freezed
-class IntegrationTestAndroidOption with _$IntegrationTestAndroidOption {
+abstract class IntegrationTestAndroidOption
+    with _$IntegrationTestAndroidOption {
   const IntegrationTestAndroidOption._();
 
   const factory IntegrationTestAndroidOption({
