@@ -25,7 +25,9 @@ mixin _$IntegrationTestAndroidOption {
   bool get networkLogs => throw _privateConstructorUsedError;
   bool get deviceLogs => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IntegrationTestAndroidOption
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IntegrationTestAndroidOptionCopyWith<IntegrationTestAndroidOption>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -60,6 +62,8 @@ class _$IntegrationTestAndroidOptionCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IntegrationTestAndroidOption
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -139,6 +143,8 @@ class __$$IntegrationTestAndroidOptionImplCopyWithImpl<$Res>
       $Res Function(_$IntegrationTestAndroidOptionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IntegrationTestAndroidOption
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -266,7 +272,9 @@ class _$IntegrationTestAndroidOptionImpl extends _IntegrationTestAndroidOption {
       networkLogs,
       deviceLogs);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IntegrationTestAndroidOption
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IntegrationTestAndroidOptionImplCopyWith<
@@ -304,8 +312,11 @@ abstract class _IntegrationTestAndroidOption
   bool get networkLogs;
   @override
   bool get deviceLogs;
+
+  /// Create a copy of IntegrationTestAndroidOption
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IntegrationTestAndroidOptionImplCopyWith<
           _$IntegrationTestAndroidOptionImpl>
       get copyWith => throw _privateConstructorUsedError;

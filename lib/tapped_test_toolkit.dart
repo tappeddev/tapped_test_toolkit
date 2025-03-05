@@ -1,4 +1,4 @@
-library tapped_test_toolkit;
+library;
 
 export 'src/integration_test/browser_stack_api.dart';
 export 'src/integration_test/browser_stack_test_status.dart';

@@ -108,8 +108,9 @@ class BrowserStackApi {
 
       await Future<void>.delayed(const Duration(seconds: 10));
 
-      final currentFormattedTime =
-          DateFormat('hh:mm:ss').format(DateTime.now().toUtc());
+      final currentFormattedTime = DateFormat(
+        'hh:mm:ss',
+      ).format(DateTime.now().toUtc());
 
       stdout.writeln(
         "[$currentFormattedTime GTM]: Waiting for the test to complete - this may take a few minutes - Go to BrowserStack to see more information.",

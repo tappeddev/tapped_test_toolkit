@@ -8,7 +8,7 @@ import 'package:tapped_test_toolkit/src/integration_test/option/integration_test
 part 'integration_test_ios_option.freezed.dart';
 
 @freezed
-class IntegrationTestIosOption with _$IntegrationTestIosOption {
+abstract class IntegrationTestIosOption with _$IntegrationTestIosOption {
   const IntegrationTestIosOption._();
 
   const factory IntegrationTestIosOption({

@@ -24,7 +24,9 @@ mixin _$IntegrationTestIosOption {
   bool get networkLogs => throw _privateConstructorUsedError;
   bool get deviceLogs => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IntegrationTestIosOption
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IntegrationTestIosOptionCopyWith<IntegrationTestIosOption> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +58,8 @@ class _$IntegrationTestIosOptionCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IntegrationTestIosOption
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -129,6 +133,8 @@ class __$$IntegrationTestIosOptionImplCopyWithImpl<$Res>
       $Res Function(_$IntegrationTestIosOptionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IntegrationTestIosOption
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -246,7 +252,9 @@ class _$IntegrationTestIosOptionImpl extends _IntegrationTestIosOption {
       networkLogs,
       deviceLogs);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IntegrationTestIosOption
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IntegrationTestIosOptionImplCopyWith<_$IntegrationTestIosOptionImpl>
@@ -279,8 +287,11 @@ abstract class _IntegrationTestIosOption extends IntegrationTestIosOption {
   bool get networkLogs;
   @override
   bool get deviceLogs;
+
+  /// Create a copy of IntegrationTestIosOption
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IntegrationTestIosOptionImplCopyWith<_$IntegrationTestIosOptionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
